@@ -42,22 +42,8 @@ public class JobControllers {
     @PostMapping("/schedule/email")
     public ResponseEntity<JobResponse> scheduleEmail(@Valid  @RequestBody  EmailRequest emailRequest ) {
 
-//        //setting explicitly right now
-//        EmailRequest emailRequest = new EmailRequest();
-//        emailRequest.setEmail("hujdarbikash000@gmail.com");
-//        emailRequest.setSubject(" Testing for server Missed online during the test ");
-//        emailRequest.setBody("This is a reminder for your upcoming meeting.");
-//
-//        LocalDateTime fixedDateTime = LocalDateTime.of(2024, 12, 26, 8, 40, 10, 10 * 1000000);  // 10 milliseconds = 10 * 1,000,000 nanoseconds
-//        ZoneId timeZone = ZoneId.of("Asia/Kathmandu");
-//        // Set the dateTime and timeZone in the EmailRequest object
-//        emailRequest.setDateTime(fixedDateTime);
-//        emailRequest.setTimeZone(timeZone);
-        // setting up the builders  now
-
-
         try {
-            log.info("email  in  the email request" +emailRequest.getEmail());
+
 
             ZonedDateTime dateTime = ZonedDateTime.of(emailRequest.getDateTime(), emailRequest.getTimeZone());
 
