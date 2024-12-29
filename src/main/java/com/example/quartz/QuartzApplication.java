@@ -16,7 +16,6 @@ public class QuartzApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		System.out.println("Database Connection Success");
-
 		Test test = new Test();
 		test.setName("BIkash");
 		String man = test.getName();
