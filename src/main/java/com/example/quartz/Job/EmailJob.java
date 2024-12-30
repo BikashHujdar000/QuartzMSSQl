@@ -19,22 +19,18 @@ public class EmailJob  extends QuartzJobBean {
     @Autowired
     private EmailService emailService;
 
-
     @Autowired
     private MailProperties mailProperties;
-
 
 
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
 
 
-
         JobDataMap jobDataMap =  context.getMergedJobDataMap();
         String recipientEmail = jobDataMap.getString("email");
         String subject = jobDataMap.getString("subject");
         String body = jobDataMap.getString("body");
-
         LocalDateTime emailTime = LocalDateTime.now();
         log.info("Sending email to  '{}' at: {}", recipientEmail, emailTime);
 
